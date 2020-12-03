@@ -1,6 +1,25 @@
-# Podium front end code challenge
-Details about the challenge TBD
+# Podium frontend take-home challenge
+Thank you for taking the time to complete this assessment! You have been provided with a boilerplate application that gives you just enough to complete the list of tasks outlined below. Unless otherwise stated, we expect you to document and test along the way as you see fit. The design of the application is entirely up to you. 
 
+This assessment is broken into two separate parts. The first is required for all candidates and the following tasks are to be done in order. You may spend as much time as you feel is necessary and demonstrates your abilities:
+
+1. Convert each data object into a reusable component with styling of your choice.
+2.  Add some basic CSS styling (we like `styled-components`, but implement however you choose) to convert the list into a responsive grid-view.
+3. Add the ability to sort the data by any criteria of your choosing. Also add a unit test around your sort function, in addition to the UI to support this.
+4. Add the ability to filter the data by 1 or more key fields (eg. vote count, release date, etc). Also add a unit test around your filter function, in addition to the UI to support this.
+5. Add a new route for details view page (using `react-router`). Clicking on the movie item component should link to this route.
+
+For the second part, please choose (X amount TBD - by level?) of tasks from the pool below. Each task varies in difficulty, but the list is not ordered in any fashion. You may choose any tasks you'd like, and are welcome to do any additional if you desire (and have the time).
+
+**(TODO: Maybe mid-levels do 2, seniors do 4?)**
+
+* Add a unique loading indicator with a fun animation
+* Add a search bar that allows searching on 2 or more fields of the movie object. Search can be implemented client or server-side. Include a test for your search/filter function and document your decision.
+* Add client or server-side pagination. Document your decision.
+* Lazy load the images of the movie item component so they only load/appear once the component is visible (add the image if you have not already).
+* Add at least one chart or graph representing anything you feel is helpful to the end user
+* [Counts as 2] Add the ability to add comments to the details view page of the movie. Users should be able to create and delete comments (bonus points if you add in updating as well).
+* **This is a maybe** Add a websocket subscription so any new comments on a movie show up automatically on the page without a page refresh 
 
 ## Setup and installation
 
@@ -13,5 +32,41 @@ To get started, ensure you have the correct dependencies installed and run the f
 
 This will kick off two processes, the JSON server at [http://localhost:2022](http://localhost:2022) and the React server at [http://localhost:2021](http://localhost:2021). 
 
-## TODO: Add docs on server and stuff
+## Getting Started
 
+The app is wired up to with the bare minimal setup to request a list of the top 100 movies and displays the results in a long list on the root page. You are welcome (and encouraged) to modify any part of the app, including the pre-existing `useFetchMovies` hook. Although this hook is currently using REST, the server is also compatible with GraphQL. All functionality through either [json-server](https://github.com/typicode/json-server) or [json-graphql-server](https://github.com/marmelab/json-graphql-server) is available for your use. Routes and queries/mutations are also defined as outlined in the docs.
+
+For example, the `movies` routes are:
+
+```
+GET    /movies
+GET    /movies/1
+POST   /movies
+PUT    /movies/1
+PATCH  /movies/1
+DELETE /movies/1
+``` 
+
+Additionally, queries and mutations are available for the `Movie` type below: 
+
+```
+type Movie {
+  id: ID!
+  originalLanguage: String!
+  originalTitle: String!
+  overview: String!
+  popularity: Float!
+  posterPath: String!
+  releaseDate: String!
+  title: String!
+  voteAverage: Float!
+  voteCount: Int!    
+}
+```
+	
+## Final notes
+
+* Please commit and check-in frequently, and try to track your time along the way. 
+* Feel free yo use any third-party libraries, frameworks, etc. 
+* This app is yours. Any changes to any part of the app are more than welcome!
+* When you finish, make sure your final changes are pushed up to the branch and let your recruiter know.
