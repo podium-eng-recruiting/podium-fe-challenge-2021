@@ -1,28 +1,28 @@
 import { useState, useEffect } from 'react';
 
-const API_ROOT_URL = "http://localhost:2020";
+const REST_API_ROOT_ENDPOINT = 'http://localhost:2020/api';
 
 const useFetchMovies = () => {
-		const [data, setData] = useState([])
-		const [loading, setLoading] = useState(false)
-		const [error, setError] = useState(false)
-		const endpoint = `${API_ROOT_URL}/movies`
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const endpoint = `${REST_API_ROOT_ENDPOINT}/movies`;
 
-		useEffect(() => {
-			setLoading(true)
-			fetch(endpoint)
-				.then(res => res.json())
-				.then((res) => {
-					setData(res)
-					setLoading(false)
-				})
-				.catch(() => {
-					setError(true)
-					setLoading(false)
-				})
-		}, [endpoint])
+  useEffect(() => {
+    setLoading(true);
+    fetch(endpoint)
+      .then(res => res.json())
+      .then(res => {
+        setData(res);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+  }, [endpoint]);
 
-		return { data, loading, error }
-}
+  return { data, loading, error };
+};
 
-export default useFetchMovies
+export default useFetchMovies;

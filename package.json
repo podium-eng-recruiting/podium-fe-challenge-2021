@@ -3,27 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "json-graphql-server": "^2.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
-	"devDependencies": {
-		"concurrently": "^3.1.0",
+  "devDependencies": {
+    "concurrently": "^3.1.0",
     "prettier": "^1.19.1",
     "react-scripts": "0.7.0",
     "top-movies-json": "git+https://github.com/brianbolnick/top-movies-json.git"
   },
   "scripts": {
- 		"start": "PORT=2021 ./node_modules/.bin/concurrently \"cd ./node_modules/top-movies-json && node index.js\" \"react-scripts start\"",
+    "start": "PORT=2021 ./node_modules/.bin/concurrently \"cd ./node_modules/top-movies-json && babel-node index.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-"prettier": {
+  "prettier": {
     "singleQuote": true,
     "trailingComma": "none"
   },

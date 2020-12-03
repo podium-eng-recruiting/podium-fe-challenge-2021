@@ -13,13 +13,13 @@ const App = () => {
       ) : (
         <ol>
           {data.map(movie => (
-            <li>
+            <li key={movie.id}>
               {movie.title}
               <ul>
-                <li>Release Date: {movie.release_date}</li>
+                <li>Release Date: {movie.releaseDate}</li>
                 <li>Description: {movie.overview}</li>
-                <li>Average Vote: {movie.vote_average}</li>
-                <li>Total Votes: {movie.vote_count}</li>
+                <li>Average Vote: {movie.voteAverage}</li>
+                <li>Total Votes: {movie.voteCount}</li>
               </ul>
             </li>
           ))}
