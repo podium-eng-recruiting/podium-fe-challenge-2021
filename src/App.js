@@ -1,7 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useFetchMovies } from "./hooks";
 
 function App() {
+  const  {data, loading, error } = useFetchMovies();
+	console.log("loading", loading)
+	console.log("data", data)
+
   return (
     <div className="App">
       <header className="App-header">
