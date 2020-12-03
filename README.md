@@ -18,7 +18,7 @@ For the second part, please choose (X amount TBD - by level?) of tasks from the 
 * Add client or server-side pagination. Document your decision.
 * Lazy load the images of the movie item component so they only load/appear once the component is visible (add the image if you have not already).
 * Add at least one chart or graph representing anything you feel is helpful to the end user
-* [Counts as 2] Add the ability to add comments to the details view page of the movie. Users should be able to create and delete comments (bonus points if you add in updating as well). There is a one-to-many association between `movies` and `comments`. Follow the json-server documentation for querying and creating associations.
+* [Counts as 2] Add the ability to add comments to the details view page of the movie. Users should be able to create and delete comments (bonus points if you add in updating as well). There is a one-to-many association between `movies` and `comments`. Follow the json-server documentation for querying and creating associations. __TODO: add some notes about the weird quirks with grapql-server and associations__
 * **This is a maybe** Add a websocket subscription so any new comments on a movie show up automatically on the page without a page refresh 
 
 ## Setup and installation
