@@ -1,4 +1,4 @@
-# Podium frontend take-home challenge
+# Podium frontend take-home challenge (WIP)
 Thank you for taking the time to complete this assessment! You have been provided with a boilerplate application that gives you just enough to complete the list of tasks outlined below. Unless otherwise stated, we expect you to document and test along the way as you see fit. The design of the application is entirely up to you. 
 
 This assessment is broken into two separate parts. The first is required for all candidates and the following tasks are to be done in order. You may spend as much time as you feel is necessary and demonstrates your abilities:
