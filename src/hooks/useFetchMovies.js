@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const API_ROOT_URL = "http://localhost:2020";
 
 const useFetchMovies = () => {
-		const [data, setData] = useState({})
+		const [data, setData] = useState([])
 		const [loading, setLoading] = useState(false)
 		const [error, setError] = useState(false)
 		const endpoint = `${API_ROOT_URL}/movies`

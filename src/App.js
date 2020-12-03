@@ -1,30 +1,32 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { useFetchMovies } from "./hooks";
+import './App.css';
+import { useFetchMovies } from './hooks';
 
-function App() {
-  const  {data, loading, error } = useFetchMovies();
-	console.log("loading", loading)
-	console.log("data", data)
+const App = () => {
+  const { data, loading } = useFetchMovies();
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Top 100 Movies</h1>
+
+      {loading ? (
+        <div>Loading movies...</div>
+      ) : (
+        <ol>
+          {data.map(movie => (
+            <li>
+              {movie.title}
+              <ul>
+                <li>Release Date: {movie.release_date}</li>
+                <li>Description: {movie.overview}</li>
+                <li>Average Vote: {movie.vote_average}</li>
+                <li>Total Votes: {movie.vote_count}</li>
+              </ul>
+            </li>
+          ))}
+        </ol>
+      )}
     </div>
   );
-}
+};
 
 export default App;

@@ -13,6 +13,7 @@
   },
 	"devDependencies": {
 		"concurrently": "^3.1.0",
+    "prettier": "^1.19.1",
     "react-scripts": "0.7.0",
     "top-movies-json": "git+https://github.com/brianbolnick/top-movies-json.git"
   },
@@ -21,6 +22,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+"prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
   },
   "eslintConfig": {
     "extends": [
