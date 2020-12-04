@@ -18,7 +18,7 @@ const MOVIE_QUERY = gql`
   }
 `;
 
-const useAllUnreadCountQuery = ({ id }) => {
+const useMovieQuery = ({ id }) => {
   const { data, loading, error } = useQuery(MOVIE_QUERY, {
     fetchPolicy: 'cache-and-network',
     variables: { id },
@@ -34,4 +34,4 @@ const useAllUnreadCountQuery = ({ id }) => {
   };
 };
 
-export default useAllUnreadCountQuery;
+export default useMovieQuery;

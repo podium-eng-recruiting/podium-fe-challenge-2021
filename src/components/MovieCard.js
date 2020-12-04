@@ -43,7 +43,7 @@ const Description = styled.div`
 
 const MovieCard = ({ data }) => {
   return (
-    <Link to={`/movie/${data.id}`}>
+    <Link to={`/movie/${data.id}`} css="text-decoration: none;">
       <Container src={data.posterPath}>
         <Title>{data.title}</Title>
         <Description>{data.overview}</Description>
