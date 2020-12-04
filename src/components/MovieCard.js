@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { colors } from '../shared';
 
@@ -42,10 +43,12 @@ const Description = styled.div`
 
 const MovieCard = ({ data }) => {
   return (
-    <Container src={data.posterPath}>
-      <Title>{data.title}</Title>
-      <Description>{data.overview}</Description>
-    </Container>
+    <Link to={`/movie/${data.id}`}>
+      <Container src={data.posterPath}>
+        <Title>{data.title}</Title>
+        <Description>{data.overview}</Description>
+      </Container>
+    </Link>
   );
 };
 
