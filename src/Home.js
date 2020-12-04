@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useAllMoviesQuery } from './graphql';
 import MovieCard from './components/MovieCard';
 import Filters from './components/Filters';
@@ -42,7 +42,10 @@ const MoviesContainer = styled.div`
  **/
 const Home = () => {
   const [sortDirection, setSortDirection] = useState('ASC');
+  const [selectedFilter, setSelectedFilter] = useState('allTime');
   const { data, loading } = useAllMoviesQuery();
+
+  const today = useMemo(() => new Date(), []);
 
   if (loading) return <div>Loading movies...</div>;
 
@@ -52,8 +55,17 @@ const Home = () => {
       : b.voteAverage - a.voteAverage;
   };
 
+  const performAgeFilter = ({ releaseDate }) => {
+    if (selectedFilter === 'allTime') return true;
+
+    const date = new Date(releaseDate);
+    const diff = today.getFullYear() - date.getFullYear();
+    return diff < selectedFilter;
+  };
+
   const renderMovies = () =>
     data
+      .filter(performAgeFilter)
       .sort(performSort)
       .map(movie => <MovieCard key={movie.id} data={movie} />);
 
@@ -61,10 +73,19 @@ const Home = () => {
     setSortDirection(direction);
   };
 
+  const handleFilter = filter => {
+    setSelectedFilter(filter);
+  };
+
   return (
     <Container>
       <h1>Top 100 Movies</h1>
-      <Filters onSort={handleSort} sortDirection={sortDirection} />
+      <Filters
+        onSort={handleSort}
+        sortDirection={sortDirection}
+        onFilterSelect={handleFilter}
+        selectedFilter={selectedFilter}
+      />
       <MoviesContainer>{renderMovies()}</MoviesContainer>
     </Container>
   );
