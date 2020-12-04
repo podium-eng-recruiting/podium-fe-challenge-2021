@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { useAllMoviesQuery } from './graphql';
 import MovieCard from './components/MovieCard';
+import Filters from './components/Filters';
 import styled from 'styled-components/macro';
 import { media } from './shared';
 
@@ -22,7 +24,7 @@ const MoviesContainer = styled.div`
   align-items: center;
   width: 100%;
 
-  ${media.smallDesktop`
+  ${media.phone`
 		flex-flow: column;
 		flex-wrap: wrap;
 		width: 90%;
@@ -39,16 +41,30 @@ const MoviesContainer = styled.div`
  * GraphQL.
  **/
 const Home = () => {
+  const [sortDirection, setSortDirection] = useState('ASC');
   const { data, loading } = useAllMoviesQuery();
 
   if (loading) return <div>Loading movies...</div>;
 
+  const performSort = (a, b) => {
+    return sortDirection === 'DESC'
+      ? a.voteAverage - b.voteAverage
+      : b.voteAverage - a.voteAverage;
+  };
+
   const renderMovies = () =>
-    data.map(movie => <MovieCard key={movie.id} data={movie} />);
+    data
+      .sort(performSort)
+      .map(movie => <MovieCard key={movie.id} data={movie} />);
+
+  const handleSort = direction => {
+    setSortDirection(direction);
+  };
 
   return (
     <Container>
       <h1>Top 100 Movies</h1>
+      <Filters onSort={handleSort} sortDirection={sortDirection} />
       <MoviesContainer>{renderMovies()}</MoviesContainer>
     </Container>
   );
