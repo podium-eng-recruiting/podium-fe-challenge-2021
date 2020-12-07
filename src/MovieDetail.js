@@ -85,9 +85,54 @@ const Details = styled.div`
   flex: 2;
 `;
 
+const ReleaseDate = styled.div`
+  display: flex;
+  margin-bottom: 16px;
+
+  span {
+    font-weight: 600;
+  }
+`;
+
+const Overview = styled.div`
+  font-size: 16px;
+  margin-bottom: 56px;
+`;
+
+const Ratings = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+`;
+
+const RatingGroup = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+`;
+
+const RatingLabel = styled.div`
+  font-size: 14px;
+  text-transform: uppercase;
+`;
+
+const RatingValue = styled.div`
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+`;
+
 const MovieDetail = () => {
   const { id } = useParams();
   const { data, loading } = useMovieQuery({ id });
+
+  const date = new Date(data.releaseDate);
+
+  const formattedDate = date
+    .toUTCString()
+    .split('00:00:00 GMT')
+    .join('');
 
   if (loading) return <div>Loading movie...</div>;
 
@@ -98,15 +143,39 @@ const MovieDetail = () => {
         <CardWrapper>
           <Card>
             <ImageWrapper>
-              <img src={data.posterPath} />
+              <img alt="poster-img" src={data.posterPath} />
             </ImageWrapper>
             <Details>
               <Title>{data.title}</Title>
-              <div>{data.releaseDate}</div>
-              <div>{data.overview}</div>
-              <div>{data.popularity}</div>
-              <div>{data.voteAverage}</div>
-              <div>{data.voteCount}</div>
+
+              <ReleaseDate>
+                <span>Release Date: </span>
+                {formattedDate}
+              </ReleaseDate>
+
+              <Overview>{data.overview}</Overview>
+
+              <Ratings>
+                <RatingGroup>
+                  <RatingValue>{data.popularity}</RatingValue>
+                  <RatingLabel>Popularity</RatingLabel>
+                </RatingGroup>
+
+                <RatingGroup>
+                  <RatingValue>{data.voteAverage}</RatingValue>
+                  <RatingLabel>Avg. Vote</RatingLabel>
+                </RatingGroup>
+
+                <RatingGroup>
+                  <RatingValue>{data.voteCount}</RatingValue>
+                  <RatingLabel>Total Votes</RatingLabel>
+                </RatingGroup>
+              </Ratings>
+              {/*
+              <DataGroup>{data.popularity}</DataGroup>
+              <DataGroup>{data.voteAverage}</DataGroup>
+              <DataGroup>{data.voteCount}</DataGroup>
+							*/}
             </Details>
           </Card>
         </CardWrapper>
