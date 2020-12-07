@@ -171,11 +171,6 @@ const MovieDetail = () => {
                   <RatingLabel>Total Votes</RatingLabel>
                 </RatingGroup>
               </Ratings>
-              {/*
-              <DataGroup>{data.popularity}</DataGroup>
-              <DataGroup>{data.voteAverage}</DataGroup>
-              <DataGroup>{data.voteCount}</DataGroup>
-							*/}
             </Details>
           </Card>
         </CardWrapper>
