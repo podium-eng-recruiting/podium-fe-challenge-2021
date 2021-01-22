@@ -18,7 +18,7 @@ If you'd like to further showcase your skills, you may optionally choose from an
 * Lazy load the images of the movie item component so they only load/appear once the component is visible.
 * Add at least one chart or graph representing anything you feel is helpful to the end user
 * Add functionality where clicking on an image preview expands the image in a modal/light box
-* Use the provided `performance` functions to track when the page initially renders and has finished its initial load (TODO: clean this desc up)
+* Use the provided `track` functions (currently in `App.js`) to track when the page initially loads and has completely finished rendering. Each function should be called a maximum of 1 time per page load.
 * Add the ability to add comments to the details view page of the movie. Users should be able to create and delete comments (bonus points if you add in updating as well). There is a one-to-many association between movies and comments. Follow the json-server documentation for querying and creating associations. TODO: add some notes about the weird quirks with grapql-server and associations
 * Add any custom feature you think would benefit the end user. Document your decision making process
 
