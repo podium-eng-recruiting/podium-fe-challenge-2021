@@ -29,6 +29,7 @@ const Home = () => {
                 <li>Description: {movie.overview}</li>
                 <li>Average Vote: {movie.voteAverage}</li>
                 <li>Total Votes: {movie.voteCount}</li>
+                <li>Genres: {movie.genres.join(', ')}</li>
               </ul>
             </li>
           ))}

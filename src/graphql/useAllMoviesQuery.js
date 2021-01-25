@@ -14,6 +14,7 @@ const ALL_MOVIES_QUERY = gql`
       title
       voteAverage
       voteCount
+      genres
     }
   }
 `;
