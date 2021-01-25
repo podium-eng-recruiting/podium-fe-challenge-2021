@@ -63,6 +63,7 @@ type Movie {
   title: String!
   voteAverage: Float!
   voteCount: Int!    
+  genres: [String]!
 }
 ```
 	
