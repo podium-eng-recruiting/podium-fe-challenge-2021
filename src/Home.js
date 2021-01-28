@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>Top 100 Movies</h1>
+      <h1>Popular Movies</h1>
 
       {loading ? (
         <div>Loading movies...</div>

@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders the home page with a title', () => {
   render(<App />, { wrapper: MemoryRouter });
-  const titleElement = screen.getByText(/Top 100 Movies/i);
+  const titleElement = screen.getByText(/Popular Movies/i);
   expect(titleElement).toBeInTheDocument();
 });

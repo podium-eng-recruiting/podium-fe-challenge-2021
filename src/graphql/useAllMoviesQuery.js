@@ -1,6 +1,12 @@
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
+/**
+ * NOTE: Due to limitations with JSON-server,
+ * this query does not fully reflect each field and
+ * associated type, but will return the full set of data
+ * regardless.
+ **/
 const ALL_MOVIES_QUERY = gql`
   query allMovies {
     allMovies {
@@ -14,7 +20,11 @@ const ALL_MOVIES_QUERY = gql`
       title
       voteAverage
       voteCount
+      budget
+      runtime
       genres
+      cast
+      director
     }
   }
 `;
