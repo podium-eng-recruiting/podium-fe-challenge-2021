@@ -6,8 +6,8 @@ Thank you for taking the time to complete this assessment. This application cont
 Your task is to build an application that matches the design mock-ups ([as found here](https://share.goabstract.com/b949487b-4df0-4431-8ca3-6cd912096898)) around a list of popular movies from [The Movie Database](https://www.themoviedb.org/). All assests are provided to you in the app. You are welcome to use them however you prefer. This assessment is broken into two separate parts, the first being to convert the data provided to meet the designs you have been given. Here are some important things to keep in mind:
 
 * The first section contains the top 5 movies of the data set, according to rating. Document how you determined this order. Hovering over a movie in this section reveals a button that when clicked, navigates to a detailed view of the movie. This view should be on a separate route and should match the provided designs.
-* The second section allows the end user to filter by genre. Clicking a filter should navigate to a new page showing the category and associated films as shown in the designs. Create a unit test around your filter function. This page is also sortable (see next step).
-* The third section shows all movies with an option for the user to sort by an order of their choice. Create a unit test around your sort function. Clicking on a movie in this section links to the same detail view page as in the initial step. 
+* The second section allows the end user to filter by genre. Clicking a filter should navigate to a new page showing the category and associated films as shown in the designs. This page is also sortable (see next step).
+* The third section shows all movies with an option for the user to sort by an order of their choice. Clicking on a movie in this section links to the same detail view page as in the initial step. 
 
 ---
 

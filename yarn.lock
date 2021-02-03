@@ -12225,7 +12225,7 @@ toidentifier@1.0.0:
 
 "top-movies-json@git+https://github.com/brianbolnick/top-movies-json.git":
   version "1.0.0"
-  resolved "git+https://github.com/brianbolnick/top-movies-json.git#3a49fac4283dddce5138429c591695bf72096241"
+  resolved "git+https://github.com/brianbolnick/top-movies-json.git#ec431dee042e776cd0ddcca85804806a135cc63b"
   dependencies:
     "@babel/core" "^7.12.9"
     "@babel/node" "^7.12.6"
