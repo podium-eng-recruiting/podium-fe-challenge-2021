@@ -28,7 +28,7 @@
     "concurrently": "^3.1.0",
     "prettier": "^1.19.1",
     "react-scripts": "0.7.0",
-    "top-movies-json": "git+https://github.com/brianbolnick/top-movies-json.git"
+    "top-movies-json": "git+https://github.com/podium-eng-recruiting/podium-fe-challenge-support-2021.git"
   },
   "scripts": {
     "start": "PORT=2021 ./node_modules/.bin/concurrently \"cd ./node_modules/top-movies-json && babel-node index.js\" \"react-scripts start\"",

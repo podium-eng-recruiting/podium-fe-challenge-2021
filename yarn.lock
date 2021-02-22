@@ -12223,9 +12223,9 @@ toidentifier@1.0.0:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
-"top-movies-json@git+https://github.com/brianbolnick/top-movies-json.git":
+"top-movies-json@git+https://github.com/podium-eng-recruiting/podium-fe-challenge-support-2021.git":
   version "1.0.0"
-  resolved "git+https://github.com/brianbolnick/top-movies-json.git#ec431dee042e776cd0ddcca85804806a135cc63b"
+  resolved "git+https://github.com/podium-eng-recruiting/podium-fe-challenge-support-2021.git#ec431dee042e776cd0ddcca85804806a135cc63b"
   dependencies:
     "@babel/core" "^7.12.9"
     "@babel/node" "^7.12.6"
